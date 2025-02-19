@@ -1,0 +1,10 @@
+services:
+  go:
+    build: .
+    env_file:
+      - ./.env
+    volumes:
+      - .:/workspaces:cached
+    stdin_open: true
+    tty: true
+
