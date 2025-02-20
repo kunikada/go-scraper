@@ -2,11 +2,10 @@ FROM golang:1.24-bookworm
 
 # install
 # nodejs: for SonarLint
-RUN apt-get update && apt-get install -y \
-  nodejs \
-  && apt-get clean
-
-RUN useradd -m gouser
+RUN apt-get update 
+  && apt-get install -y nodejs \
+  && apt-get clean \
+  && useradd -m gouser
 USER gouser
 
 WORKDIR /workspaces
